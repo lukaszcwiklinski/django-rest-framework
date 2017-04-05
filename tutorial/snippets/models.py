@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from django.db import models
@@ -10,7 +11,7 @@ LANGUAGE_CHOICES = sorted((item, item) for item in get_all_styles())
 STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 
-class Snippet(object):
+class Snippet(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default='')
     code = models.TextField()
